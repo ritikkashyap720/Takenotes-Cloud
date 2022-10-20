@@ -14,7 +14,7 @@ on operating system such as windows, android, ios, mac os etc
  - Give colour to your notes.
  - Edit notes
  - Edit notes color
- - Adaptive dark mode: If user logout and login again then the application will open in the mode which is selected by the user
+ - Adaptive dark mode: If user logout and login again then the application will open in the mode which is selected by the user previously
  - Search mode which enable you to search from title as well as text.
  - A better design optimized for better desktop and mobile experience.
  
