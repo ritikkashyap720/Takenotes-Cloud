@@ -9,14 +9,16 @@ on operating system such as windows, android, ios, mac os etc
     
 # Features	
 
+
+ - Adaptive dark mode: If user logout and login again then the application will open in the mode which is selected by the user previously
+ - Search mode which enable you to search from title as well as text.
+ - A better design optimized for better desktop and mobile experience.
  - You can add your notes with title.
  - Progressive Web App gives you ability to install app on various platform.
  - Give colour to your notes.
  - Edit notes
  - Edit notes color
- - Adaptive dark mode: If user logout and login again then the application will open in the mode which is selected by the user previously
- - Search mode which enable you to search from title as well as text.
- - A better design optimized for better desktop and mobile experience.
+ 
  
 
 
