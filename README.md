@@ -22,4 +22,4 @@ on operating system such as windows, android, ios, mac os etc
 
 # How notes are stored	
 
-Here notes are stored within firebase realtime database in which data can be stored and accessed in realtime also it is secured and no one can access you notes.
+Here notes are stored within firebase realtime database in which data can be stored and accessed in realtime also it is secured and no one can access your notes.
