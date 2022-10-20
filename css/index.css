@@ -1,0 +1,695 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+    /* transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out; */
+}
+
+.light-theme {
+    --body-bg: rgb(228, 225, 225);
+    --notes-color: black;
+    --notes-bg: white;
+    --icon: white;
+    --navbar: rgb(64, 0, 128);
+}
+
+.dark-theme {
+    --body-bg: #040a0e;
+    --notes-color: white;
+    --notes-bg: #393c3e;
+    --icon: black;
+    --navbar: #152b3c;
+}
+
+body {
+    background-color: var(--body-bg);
+    
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    height: 25px;
+    margin: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar {
+    user-select: none;
+    width: 100%;
+    background-color: var(--navbar);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.links li {
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.links li:hover {
+    cursor: pointer;
+    color: rgb(220, 220, 220);
+
+}
+
+.logout-parent:hover .logout {
+    display: flex;
+}
+
+.logout {
+    position: absolute;
+    margin: 5px -70px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.2s ease-in-out;
+}
+
+.logout:hover {
+    background-color: rgb(247, 55, 55);
+    color: white;
+}
+
+
+/* intro */
+.intro {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--notes-color);
+    transition: 0.2s ease-in-out;
+}
+
+.details {
+    text-align: center;
+}
+
+.details p {
+    margin: 10px;
+}
+
+/* notes  */
+.blank {
+    height: 68px;
+    width: 100%;
+    background-color: white;
+}
+
+.notes-container {
+    display: grid;
+    width: 100%;
+    padding: 0px 50px 50px 50px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    transition: 0.2s ease-in-out;
+    height: fit-content;
+    overflow: hidden;
+   
+}
+.notes-grid{
+  
+    grid-template-columns: 50% 50%;
+    width: 50%;
+    background: var(--notes-bg);
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.notes-body {
+    /* padding: 20px; */
+    background-color: var(--notes-bg);
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 6px;
+    height: 200px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    color: var(--notes-color);
+    transition: 0.2s ease-in-out;
+}
+
+.notes-body:hover {
+    cursor: pointer;
+box-shadow: rgba(13, 13, 13, 0.1) 0px 8px 24px, rgba(11, 11, 12, 0.1) 0px 16px 56px, rgba(19, 19, 20, 0.1) 0px 24px 80px;
+}
+
+.notes-option {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--navbar);
+}
+
+.title {
+    white-space: nowrap;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.opt-btn {
+    padding: 5px;
+    border-radius: 50% 50%;
+    color: note;
+    margin: 5px;
+    user-select: none;
+}
+
+.opt-btn:hover {
+    /* background-color: rgb(214, 232, 232); */
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+
+.notes-body p {
+    margin: 15px;
+    height: 100%;
+}
+
+.notes-body h3 {
+    margin: 15px;
+}
+
+
+/* notes options */
+.options-btn {
+    list-style: none;
+    color: white;
+}
+
+.options {
+    list-style: none;
+    display: none;
+    position: absolute;
+    user-select: none;
+}
+
+.options li {
+    border-radius: 50%;
+    color: black;
+    margin: 10px 10px 10px 3px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.options-btn:hover .options {
+    display: block;
+}
+
+.edit-note:hover {
+    cursor: pointer;
+    background-color: rgb(50, 241, 152);
+    color: white;
+}
+
+.delete-note:hover {
+    cursor: pointer;
+    background-color: rgb(247, 55, 55);
+    color: white;
+}
+
+.color-pick {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.color-pick:hover {
+    background-color: var(--navbar);
+    color: white;
+
+}
+
+.color-option {
+    position: absolute;
+    right: 40px;
+    bottom: 55px;
+    list-style: none;
+    display: none;
+    flex-direction: row-reverse;
+    transition: 0.2s ease-in-out;
+}
+
+.color-pick:hover .color-option {
+    display: flex;
+}
+
+.color {
+    height: 25px;
+    width: 25px;
+
+}
+
+.color-1 {
+    background-color: #fb8ba7 !important;
+}
+
+.color-2 {
+    background-color: #4fc1ff !important;
+}
+
+.color-3 {
+    background-color: #00bb79 !important;
+}
+
+.color-4 {
+    background-color: #ab5ba7 !important;
+}
+
+.color-5 {
+    background-color: #ffbc59 !important;
+}
+
+
+
+/* add note */
+
+.addnote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 50%;
+}
+
+.addnote-container {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--notes-bg) !important;
+    color: var(--notes-color) !important;
+    padding: 50px;
+    border-radius: 10px;
+    width: 80%;
+    transition: 0.2s ease-in-out;
+    height: 85vh;
+}
+
+.add-title {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #2d2d2d;
+    color: var(--text);
+    align-items: center;
+    border-radius: 0.4rem;
+}
+
+.add-input {
+    color: var(--text);
+    background-color: transparent;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+.add-title:focus-within {
+    border: 2px solid #000000;
+}
+
+/* search */
+.search {
+    height: 50px;
+    width: 100%;
+    background-color: var(--notes-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.search-parent {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: var(--notes-color);
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#refresh{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--navbar);
+    padding: 10px;
+    border-radius: 13px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+#refresh:hover{
+    cursor: pointer;
+}
+
+.input-search {
+    color: var(--text);
+    background-color: transparent;
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+.search-parent:focus-within {
+    border: 3px solid var(--navbar);
+}
+
+.addcolor-pick {
+    list-style: none;
+    padding: 10px;
+}
+
+.add-color-option {
+    display: none;
+    position: absolute;
+    list-style: none;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.addcolor {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.addcolor-pick:hover .add-color-option {
+    display: flex;
+
+}
+
+.addcolor-pick:hover {
+    cursor: pointer;
+}
+
+.add-text {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #2d2d2d;
+    color: var(--text);
+    align-items: center;
+    border-radius: 0.4rem;
+    padding: 10px;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: 16px;
+    background-color: var(--notes-bg);
+    height: inherit;
+}
+
+.add-text:focus-within {
+    border: 2px solid #000000;
+    outline: none;
+}
+
+.note-btn {
+    padding: 5px 10px 5px 10px;
+    border-radius: 6px;
+    margin: 5px;
+
+}
+
+.addnote-btn {
+
+    /* background-color: transparent; */
+    background-color: #00bb51;
+    border: 3px solid #00bb51;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.addnote-btn:hover {
+    color: white;
+    border: 3px solid #008038;
+    background-color: #008038;
+    cursor: pointer;
+}
+
+
+.cancel-btn {
+    background-color: #e72323;
+    border: 3px solid #e72323;
+    transition: 0.2s ease-in-out;
+    color: white;
+}
+
+.cancel-btn:hover {
+    color: white;
+    background-color: #c50202;
+    border: 3px solid #c50202;
+    cursor: pointer;
+}
+
+/* warning p   tags */
+.warning {
+    color: red;
+}
+
+/* open note */
+
+.openNote {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 1px solid var(--notes-color); */
+}
+
+.open-container {
+    background-color: var(--notes-bg);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: var(--notes-color);
+}
+
+.titlebar {
+    /* margin: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: white; */
+    padding: 5px 5px 5px 20px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #4e0eff;
+    color: white !important;
+}
+
+.open-container p {
+    margin: 10px 20px;
+
+}
+
+.open-container h2 {
+    margin: 10px 20px;
+
+
+}
+
+.open-icons {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.icons {
+    padding: 7px;
+    margin: 5px;
+    border-radius: 50%;
+
+}
+
+.open-colors {
+    display: none;
+    position: absolute;
+    list-style: none;
+}
+
+.color-icon {
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.color-pick:hover .open-colors {
+    display: block;
+}
+
+hr {
+
+    border-top: 0.1px solid black;
+}
+
+
+#short-title,
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* icons */
+.material-symbols-outlined {
+    user-select: none !important;
+}
+
+/* spash screen */
+#splash-screen{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color:var(--body-bg);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* animation: fadeIn 1s;  */
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 1; }
+    /* 25% { opacity: 0.75; }
+    500% { opacity: 0.25; } */
+    100% { opacity: 0; }
+  }
+
+#splash-screen.hide-Splash-Screen{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    background-color: purple;
+    z-index: -10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Splash-logo{
+    height: 200px;
+    margin: 50px;
+    animation-name: bounce-2;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+#splash-screen h1,#splash-screen span{
+    color: var(--notes-color);
+    text-transform: uppercase;
+}
+
+@keyframes bounce-2 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+/* media query start from here */
+
+@media screen and (max-width: 1024px) {
+    .notes-container {
+        display: grid;
+        padding: 0px 20px 20px 20px;
+        grid-template-columns: 33% 33% 33%;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notes-container {
+        display: grid;
+        padding: 0px 20px 20px 20px;
+        grid-template-columns: 50% 50%;
+
+    }
+
+   
+
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .notes-container {
+        display: grid;
+        padding: 0px 20px 20px 20px;
+        grid-template-columns: auto;
+
+    }
+
+
+    .notes-body {
+        max-width: 100% !important;
+    }
+
+    .addnote-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .open-container {
+        margin: 20px;
+    }
+
+    #container{
+        display: static !important;
+    }
+
+}
+
+
+

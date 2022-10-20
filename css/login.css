@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+    /* transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out; */
+}
+
+.light-theme {
+    --body-bg: rgb(228, 225, 225);
+    --notes-color: black;
+    --notes-bg: white;
+    --icon: white;
+    --navbar: rgb(64, 0, 128);
+    --login-card-bg:#ffffff;
+    
+}
+
+.dark-theme {
+    --body-bg: #040a0e;
+    --notes-color: white;
+    --notes-bg: #393c3e;
+    --icon: black;
+    --navbar: #152b3c;
+    --login-card-bg:#393c3e;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+
+/* spash screen */
+#splash-screen {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: var(--body-bg);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* animation: fadeIn 1s;  */
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+
+    /* 25% { opacity: 0.75; }
+    500% { opacity: 0.25; } */
+    100% {
+        opacity: 0;
+    }
+}
+
+#splash-screen.hide-Splash-Screen {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    background-color: purple;
+    z-index: -10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Splash-logo {
+    height: 200px;
+    margin: 50px;
+    animation-name: bounce-2;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#splash-screen h1,
+#splash-screen span {
+    color: var(--notes-color);
+    text-transform: uppercase;
+}
+
+@keyframes bounce-2 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* login page */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    /* background-color: rgb(45, 44, 44); */
+    color: var(--notes-color);
+    border-radius: 10px;
+
+}
+
+.welcome,
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 50%; */
+}
+
+.welcome h1 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.welcome p {
+
+    text-align: center;
+}
+
+.welcome span {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.welcome img {
+    /* margin: 50px;  */
+    height: 200px;
+}
+
+.logo {
+    height: 30px;
+}
+
+.buttons {
+    margin-top: 100px;
+
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px ;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    width: 220px;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #d0d0d0;
+    border: 1px solid rgb(149, 149, 149);
+}
+
+.logo {
+  padding: 0px 5px;
+}
+.login-card{
+  background-color: var(--login-card-bg);
+  padding: 50px 10px 30px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+}
+.line{
+    position: relative;
+    bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+    .login-card{
+        background: transparent;
+        box-shadow: none;
+    }
+}
