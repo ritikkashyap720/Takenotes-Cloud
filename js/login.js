@@ -1,13 +1,8 @@
 // firebase code
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDUEqBTqnof9xztexhh21biqbn_GU9kDGc",
-    authDomain: "takenotes-34e1a.firebaseapp.com",
-    databaseURL: "https://takenotes-34e1a-default-rtdb.firebaseio.com",
-    projectId: "takenotes-34e1a",
-    storageBucket: "takenotes-34e1a.appspot.com",
-    messagingSenderId: "927772877424",
-    appId: "1:927772877424:web:d594d6ebe238cb0ed18ab5"
+ 
+  
 };
 
 // Initialize Firebase
