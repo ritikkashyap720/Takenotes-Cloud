@@ -1,6 +1,6 @@
 # Welcome to Takenotes Cloud
 
-**Takenotes cloud** is an update for **[Takenotes](https://ritikkashyap720.github.io/Takenotes/)** which  is combined with firebase to give   user ability to add, modify and access the notes from anywhere around the  world.
+**Takenotes cloud** is an update for **[Takenotes](https://takenotes-34e1a.web.app/)** which  is combined with firebase to give   user ability to add, modify and access the notes from anywhere around the  world.
 **Takenotes cloud** is a PWA (Progressive Web App) which means it can be installed 
 on operating system such as windows, android, ios, mac os etc
 
